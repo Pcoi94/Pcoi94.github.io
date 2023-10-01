@@ -1,15 +1,17 @@
 html, body {
+  color: #fff;
+  overflow: hidden;
   background-image: url("https://i.pinimg.com/originals/de/1d/df/de1ddf9ee30e08e15460626b919ef87e.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  font: 300 1em "Montserrat", sans-serif;
   justify-content: center;
   align-content: center;
   align-items: center;
   text-align: center;
   min-height: 100vh;
   display: flex;
-  height: 100%;
 }
 
 #wrapper {
