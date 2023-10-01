@@ -1,0 +1,82 @@
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+.raise {
+  --color: #fcb79a;
+  --hover: #dbb79a;
+}
+
+.offset {
+  --color: #E23E3D;
+  --hover: #dbb79a;
+}
+
+button {
+  color: var(--color);
+  transition: 0.25s;
+}
+button:hover, button:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+body {
+  color: #fff;
+  overflow: hidden;
+  background-image: url("https://i.pinimg.com/originals/de/1d/df/de1ddf9ee30e08e15460626b919ef87e.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  font: 300 1em "Montserrat", sans-serif;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+}
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+h1 {
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-size: 38px;
+  color: #f5f5f5;
+}
+
+h2 {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+footer {
+  position: relative;
+  font-weight: 200;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  opacity: 0.1;
+}
+
+code {
+  color: #e4cb58;
+  font: inherit;
+}
+
+.raise {
+  cursor: pointer;
+}
