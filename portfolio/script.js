@@ -7,5 +7,6 @@ document.getElementById("roblox-button").addEventListener("click", function() {
 });
 
 document.getElementById("carrd-button").addEventListener("click", function() {
+    console.log('test')
     window.open('https://pcoiscript.carrd.co/#home')
 });
