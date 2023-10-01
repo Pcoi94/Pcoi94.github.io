@@ -1,5 +1,5 @@
 document.getElementById("youtube-button").addEventListener("click", function() {
-    window.open('https://www.youtube.com/@pcoi94')
+    window.open('https://www.youtube.com/@pcoi94');
 });
 
 document.getElementById("roblox-button").addEventListener("click", function() {
@@ -7,5 +7,5 @@ document.getElementById("roblox-button").addEventListener("click", function() {
 });
 
 document.getElementById("portfolio-button").addEventListener("click", function() {
-    window.open('https://pcoiscript.carrd.co/#home')
+    window.open('https://pcoiscript.carrd.co/#home');
 });
