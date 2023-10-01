@@ -6,6 +6,6 @@ document.getElementById("roblox-button").addEventListener("click", function() {
     window.open("https://www.roblox.com/users/521059478/profile");
 });
 
-document.getElementById("portfolio-button").addEventListener("click", function() {
+document.getElementById("carrd-button").addEventListener("click", function() {
     window.open('https://pcoiscript.carrd.co/#home')
 });
