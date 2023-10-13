@@ -14,25 +14,7 @@
 // 	}
 // }); 
 
-const robuxToMoneys = {
-  USD: [0.95128695, "$"],
-  EUR: [1, "€"],
-  GBP: [1.1549358, "£"],
-  CAD: [0.69650299, "$"],
-  AUD: [0.59906893, "$"],
-  JPY: [0.0063621636, "¥"],
-  INR: [0.011424702, "₹"],
-  NZD: [0.56004135, "$"],
-  CHF: [1.0545984, "CHF"],
-  ZAR: [0.0499905, "R"],
-  RUB: [0.0097383132, "₽"],
-  BGN: [0.51129188, "лв"],
-  SGD: [0.69454858, "$"],
-  HKD: [0.12162383, "$"],
-  SEK: [0.086293975, "kr"],
-};
-
-const dexExToMoneys = {
+const convertion = {
   USD: [1, "$"],
   EUR: [1.0508988, "€"],
   GBP: [1.2135153, "£"],
@@ -246,19 +228,19 @@ document.addEventListener("DOMContentLoaded", function() {
     let money = "$";
     
     if (fromCurrency === "robux") {
-      calcul = inputValue * 0.0137375; // Replace with your conversion rate
-      if (robuxToMoneys[toCurrency]) {
-        calcul *= robuxToMoneys[toCurrency][0]
-        money = robuxToMoneys[toCurrency][1]
+      calcul = inputValue * (9.99 / 800); // Replace with your conversion rate
+      if (convertion[toCurrency]) {
+        calcul *= convertion[toCurrency][0]
+        money = convertion[toCurrency][1]
         
       }
     }
     
     if (fromCurrency === "devexed_robux") {
       calcul = inputValue * (105 / 30000); // Replace with your conversion rate
-      if (dexExToMoneys[toCurrency]) {
-        calcul *= dexExToMoneys[toCurrency][0]
-        money = dexExToMoneys[toCurrency][1]
+      if (convertion[toCurrency]) {
+        calcul *= convertion[toCurrency][0]
+        money = convertion[toCurrency][1]
         
       }
     }
