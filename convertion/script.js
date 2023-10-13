@@ -1,0 +1,272 @@
+// $.getJSON("http://cpv2api.com/posts/published/j-w-v", function(resp){
+// 	if(resp.success){
+// 		for (var i = 0; i < resp.data.length; i++) { 
+//     $('.posts ul').append('<li><a target="_blank" href="' + resp.data[i].link +'">' + resp.data[i].title + ' <span> ' +resp.data[i].views+ ' views</span> </a></li>');
+//     }
+// 	}
+// });
+
+// $.getJSON("https://cpv2api.com/pens/showcase/j-w-v", function(resp){
+// 	if(resp.success){
+// 		for (var i = 0; i < 5; i++) { 
+//     $('.pens ul').append('<li><a target="_blank" href="' + resp.data[i].link +'">' + resp.data[i].title + ' <span> ' +resp.data[i].views+ ' views</span> </a></li>');
+//     }
+// 	}
+// }); 
+
+const robuxToMoneys = {
+  USD: [0.95128695, "$"],
+  EUR: [1, "€"],
+  GBP: [1.1549358, "£"],
+  CAD: [0.69650299, "$"],
+  AUD: [0.59906893, "$"],
+  JPY: [0.0063621636, "¥"],
+  INR: [0.011424702, "₹"],
+  NZD: [0.56004135, "$"],
+  CHF: [1.0545984, "CHF"],
+  ZAR: [0.0499905, "R"],
+  RUB: [0.0097383132, "₽"],
+  BGN: [0.51129188, "лв"],
+  SGD: [0.69454858, "$"],
+  HKD: [0.12162383, "$"],
+  SEK: [0.086293975, "kr"],
+};
+
+const dexExToMoneys = {
+  USD: [1, "$"],
+  EUR: [1.0508988, "€"],
+  GBP: [1.2135153, "£"],
+  CAD: [0.73189014, "$"],
+  AUD: [0.62952012, "$"],
+  JPY: [0.0066864273, "¥"],
+  INR: [0.012006623, "₹"],
+  NZD: [0.58838894, "$"],
+  CHF: [1.1085032, "CHF"],
+  ZAR: [0.052574922, "R"],
+  RUB: [0.010235278, "₽"],
+  BGN: [0.5373062, "лв"],
+  SGD: [0.72980805, "$"],
+  HKD: [0.12781834, "$"],
+  SEK: [0.090681468, "kr"],
+};
+
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 33,
+      "density": {
+        "enable": true,
+        "value_area": 1420.4657549380909
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "triangle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.06313181133058181,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 11.83721462448409,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 6,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
+ 
+$('select.dropdown').each(function() {
+
+    var dropdown = $('<div />').addClass('dropdown selectDropdown');
+
+    $(this).wrap(dropdown);
+
+    var label = $('<span />').text($(this).attr('placeholder')).insertAfter($(this));
+    var list = $('<ul />');
+
+    $(this).find('option').each(function() {
+        list.append($('<li />').append($('<a />').text($(this).text())));
+    });
+
+    list.insertAfter($(this));
+
+    if($(this).find('option:selected').length) {
+        label.text($(this).find('option:selected').text());
+        list.find('li:contains(' + $(this).find('option:selected').text() + ')').addClass('active');
+        $(this).parent().addClass('filled');
+    }
+
+});
+
+$(document).on('click touch', '.selectDropdown ul li a', function(e) {
+    e.preventDefault();
+    var dropdown = $(this).parent().parent().parent();
+    var active = $(this).parent().hasClass('active');
+    var label = active ? dropdown.find('select').attr('placeholder') : $(this).text();
+
+    dropdown.find('option').prop('selected', false);
+    dropdown.find('ul li').removeClass('active');
+
+    dropdown.toggleClass('filled', !active);
+    dropdown.children('span').text(label);
+
+    if(!active) {
+        dropdown.find('option:contains(' + $(this).text() + ')').prop('selected', true);
+        $(this).parent().addClass('active');
+    }
+
+    dropdown.removeClass('open');
+});
+
+$('.dropdown > span').on('click touch', function(e) {
+    var self = $(this).parent();
+    self.toggleClass('open');
+});
+
+$(document).on('click touch', function(e) {
+    var dropdown = $('.dropdown');
+    if(dropdown !== e.target && !dropdown.has(e.target).length) {
+        dropdown.removeClass('open');
+    }
+});
+// BORDER COLOR
+const textInputs = document.querySelectorAll('input[type="text"]');
+textInputs.forEach(function(input) {
+  input.addEventListener('mouseenter', function() {
+    input.style.borderColor = "#23C4F8";
+  });
+
+  input.addEventListener('mouseleave', function() {
+    input.style.borderColor = "#2F3545";
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  const inputElement = document.getElementById('numberHere');
+  const resultElement = document.getElementById('resultHere');
+  
+  const fromDropdown = document.getElementById('fromDropdown');
+  const toDropdown = document.getElementById('toDropdown');
+  
+  function calcul() {
+    const fromCurrency = fromDropdown.value;
+    const toCurrency = toDropdown.value;
+    
+    // Parse the input value as a number
+    const inputValue = parseFloat(inputElement.value);
+    
+    // Perform currency conversion based on the selected options
+    let calcul = "NaN";
+    let money = "$";
+    
+    if (fromCurrency === "robux") {
+      calcul = inputValue * 0.0137375; // Replace with your conversion rate
+      if (robuxToMoneys[toCurrency]) {
+        calcul *= robuxToMoneys[toCurrency][0]
+        money = robuxToMoneys[toCurrency][1]
+        
+      }
+    }
+    
+    if (fromCurrency === "devexed_robux") {
+      calcul = inputValue * (105 / 30000); // Replace with your conversion rate
+      if (dexExToMoneys[toCurrency]) {
+        calcul *= dexExToMoneys[toCurrency][0]
+        money = dexExToMoneys[toCurrency][1]
+        
+      }
+    }
+    
+    // Set the result in the resultElement's value property
+    resultElement.value = calcul.toFixed(2) + " " + money;
+  }
+  
+  inputElement.addEventListener('input', calcul);
+  setInterval(calcul, 100)
+});
