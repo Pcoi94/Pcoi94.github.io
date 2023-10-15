@@ -231,11 +231,13 @@ document.addEventListener("DOMContentLoaded", function () {
     inputElement.value = robuxValue
   }
     if (devexedValue === "true") {
-    fromDropdown.selectedIndex = 1
+    const $select = document.querySelector('#fromDropdown');
+    $select.value = 'Devexed Robux'
     fromDropdown.value = "devexed_robux"
   }
     if (moneyValue != null && convertion[moneyValue]) {
-    fromDropdown.selectedIndex = convertion[moneyValue][2]
+    const $select = document.querySelector('#toDropdown');
+    $select.value = 'test'
     toDropdown.value = moneyValue
   }
   
