@@ -231,13 +231,13 @@ document.addEventListener("DOMContentLoaded", function () {
     inputElement.value = robuxValue
   }
     if (devexedValue === "true") {
-    const selectedOption = fromDropdown.options[fromDropdown.selectedIndex];
-    selectedOption.text = "Devexed robux"
+    const selectedOption = document.querySelector('span:contains("Robux")');
+    selectedOption.textContent = "Devexed robux"
     fromDropdown.value = "devexed_robux"
   }
     if (moneyValue != null && convertion[moneyValue]) {
-    const selectedOption = toDropdown.options[fromDropdown.selectedIndex];
-    selectedOption.text = convertion[moneyValue][2] + "(" + convertion[moneyValue][0] + ")"
+    const selectedOption = document.querySelector('span:contains("US Dollar (USD)")');
+    selectedOption.textContent = convertion[moneyValue][2] + "(" + convertion[moneyValue][0] + ")"
     toDropdown.value = moneyValue
   }
   
