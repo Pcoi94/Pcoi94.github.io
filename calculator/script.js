@@ -234,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fromDropdown.value = "devexed_robux"
   }
     if (moneyValue != null && convertion[moneyValue]) {
-    toDropdown.textContent = convertion[moneyValue][3] + "(" + convertion[moneyValue][2] + ")"
+    toDropdown.textContent = convertion[moneyValue][2] + "(" + convertion[moneyValue][0] + ")"
     toDropdown.value = moneyValue
   }
   
