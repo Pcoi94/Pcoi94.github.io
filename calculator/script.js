@@ -249,12 +249,12 @@ document.addEventListener("DOMContentLoaded", function () {
     let calcul = "NaN";
     let money = "$";
     
-    if (toCurrency === "TX1" || toCurrency === "TX2") {
+    if (toCurrency == "TX1" || toCurrency == "TX2") {
       calcul = inputValue * convertion[toCurrency][0];
       money = convertion[toCurrency][1];
       
     } else {
-      if (fromCurrency === "robux") {
+      if (fromCurrency == "robux") {
         calcul = inputValue * (9.99 / 800); // Replace with your conversion rate
         if (convertion[toCurrency]) {
           calcul *= convertion[toCurrency][0];
@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
 
-      if (fromCurrency === "devexed_robux") {
+      if (fromCurrency == "devexed_robux") {
         calcul = inputValue * (105 / 30000); // Replace with your conversion rate
         if (convertion[toCurrency]) {
           calcul *= convertion[toCurrency][0];
@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Set the result in the resultElement's value property
-    if (!isNaN(calcul)) {
+    if (isNaN(calcul)) {
       resultElement.value = "NaN " + money;
     } else {
       resultElement.value = calcul.toFixed(2) + " " + money;
