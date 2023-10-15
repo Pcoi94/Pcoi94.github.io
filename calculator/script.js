@@ -17,15 +17,15 @@
 console.log("updated")
 const params = new URLSearchParams(window.location.search);
 const convertion = {
-  USD: [(9.99 / 9.99), "$", 0],
-  EUR: [(11.99 / 9.99), "€", 1],
-  CAD: [(12.99 / 9.99), "$", 2],
-  AUD: [(13.99 / 9.99), "$", 3],
-  NZD: [(15.99 / 9.99), "$", 4],
-  GBP: [(8.99 / 9.99), "£", 5],
-  MXN: [(249.00 / 9.99), "$", 6],
-  CLP: [(8900.00 / 9.99), "$", 7],
-  HKD: [(78.00 / 9.99), "$", 8],
+  USD: [(9.99 / 9.99), "$", "US Dollar"],
+  EUR: [(11.99 / 9.99), "€", "Euro"],
+  CAD: [(12.99 / 9.99), "$", "Canadian Dollar"],
+  AUD: [(13.99 / 9.99), "$", "Australian Dollar"],
+  NZD: [(15.99 / 9.99), "$", "New Zealand Dollar"],
+  GBP: [(8.99 / 9.99), "£", "British Pound"],
+  MXN: [(249.00 / 9.99), "$", "Mexican Peso"],
+  CLP: [(8900.00 / 9.99), "$", "Chilean Peso"],
+  HKD: [(78.00 / 9.99), "$", "Hong Kong Dollar"],
   
   TX1: [0.7, "R$", 9],
   TX2: [0.6, "R$", 10],
@@ -231,13 +231,11 @@ document.addEventListener("DOMContentLoaded", function () {
     inputElement.value = robuxValue
   }
     if (devexedValue === "true") {
-    const $select = document.querySelector('#fromDropdown');
-    $select.value = 'Devexed Robux'
+    fromDropdown.text = "Devexed robux"
     fromDropdown.value = "devexed_robux"
   }
     if (moneyValue != null && convertion[moneyValue]) {
-    const $select = document.querySelector('#toDropdown');
-    $select.value = 'test'
+    fromDropdown.text = convertion[moneyValue][2] + "(" + convertion[moneyValue][0] + ")"
     toDropdown.value = moneyValue
   }
   
