@@ -14,6 +14,7 @@
 // 	}
 // });
 
+console.log("updated")
 const params = new URLSearchParams(window.location.search);
 const convertion = {
   USD: [(9.99 / 9.99), "$", "US Dollar"],
