@@ -272,7 +272,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Set the result in the resultElement's value property
-    resultElement.value = calcul.toFixed(2) + " " + money;
+    if (!isNaN(calcul)) {
+      resultElement.value = "NaN " + money;
+    } else {
+      resultElement.value = calcul.toFixed(2) + " " + money;
+    }
   }
 
   inputElement.addEventListener("input", calcul);
