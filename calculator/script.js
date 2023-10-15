@@ -270,13 +270,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     }
-  
+
     // Set the result in the resultElement's value property
-    const finalCalcul = parseFloat(calcul)
-    if (isNaN(finalCalcul)) {
-      calcul.value = "NaN " + money;
+    if (isNaN(calcul)) {
+      resultElement.value = "NaN " + money;
     } else {
-      calcul.value = finalCalcul.toFixed(2) + " " + money;
+      resultElement.value = calcul.toFixed(2) + " " + money;
     }
   }
 
