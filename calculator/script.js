@@ -230,9 +230,11 @@ document.addEventListener("DOMContentLoaded", function () {
     inputElement.value = robuxValue
   }
     if (devexedValue == "true") {
+    console.log("working 1")
     fromDropdown.value = "devexed_robux"
   }
     if (moneyValue != null && convertion[moneyValue]) {
+    console.log("working 2")
     toDropdown.value = moneyValue
   }
   
