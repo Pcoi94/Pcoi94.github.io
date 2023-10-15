@@ -17,18 +17,18 @@
 console.log("updated")
 const params = new URLSearchParams(window.location.search);
 const convertion = {
-  USD: [(9.99 / 9.99), "$", "US Dollar"],
-  EUR: [(11.99 / 9.99), "€", "Euro"],
-  CAD: [(12.99 / 9.99), "$", "Canadian Dollar"],
-  AUD: [(13.99 / 9.99), "$", "Australian Dollar"],
-  NZD: [(15.99 / 9.99), "$", "New Zealand Dollar"],
-  GBP: [(8.99 / 9.99), "£", "British Pound"],
-  MXN: [(249.00 / 9.99), "$", "Mexican Peso"],
-  CLP: [(8900.00 / 9.99), "$", "Chilean Peso"],
-  HKD: [(78.00 / 9.99), "$", "Hong Kong Dollar"],
+  USD: [(9.99 / 9.99), "$", 0],
+  EUR: [(11.99 / 9.99), "€", 1],
+  CAD: [(12.99 / 9.99), "$", 2],
+  AUD: [(13.99 / 9.99), "$", 3],
+  NZD: [(15.99 / 9.99), "$", 4],
+  GBP: [(8.99 / 9.99), "£", 5],
+  MXN: [(249.00 / 9.99), "$", 6],
+  CLP: [(8900.00 / 9.99), "$", 7],
+  HKD: [(78.00 / 9.99), "$", 8],
   
-  TX1: [0.7, "R$", "30% Tax"],
-  TX2: [0.6, "R$", "40% Tax"],
+  TX1: [0.7, "R$", 9],
+  TX2: [0.6, "R$", 10],
 };
 
 
@@ -231,11 +231,11 @@ document.addEventListener("DOMContentLoaded", function () {
     inputElement.value = robuxValue
   }
     if (devexedValue === "true") {
-    fromDropdown.textContent = "Devexed robux"
+    fromDropdown.selectedIndex = 1
     fromDropdown.value = "devexed_robux"
   }
     if (moneyValue != null && convertion[moneyValue]) {
-    toDropdown.textContent = convertion[moneyValue][2] + "(" + convertion[moneyValue][0] + ")"
+    fromDropdown.selectedIndex = convertion[moneyValue][2]
     toDropdown.value = moneyValue
   }
   
