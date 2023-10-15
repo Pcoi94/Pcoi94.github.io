@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (robuxValue != null) {
     inputElement.value = robuxValue
   }
-    if (devexedValue == true) {
+    if (devexedValue == "true") {
     fromDropdown.value = "devexed_robux"
   }
     if (moneyValue != null && convertion[moneyValue]) {
