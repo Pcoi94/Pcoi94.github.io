@@ -18,7 +18,7 @@ console.log("updated")
 const params = new URLSearchParams(window.location.search);
 const convertion = {
   USD: [(9.99 / 9.99), "$", "US Dollar"],
-  EUR: [(11.99 / 9.99) * 0.93, "€", "Euro"],
+  EUR: [(11.99 / 9.99), "€", "Euro"],
   CAD: [(12.99 / 9.99), "$", "Canadian Dollar"],
   AUD: [(13.99 / 9.99), "$", "Australian Dollar"],
   NZD: [(15.99 / 9.99), "$", "New Zealand Dollar"],
