@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pcoiscript.xyz/codelow-tag/">
+  <meta property="og:title" content="CodeLow tag • output">
+  <meta property="og:description" content="Pourrait tu donnez plus d'information? Pour t'aider, tu devrais envoyer un screenshot de ton output (sortie). Voir le tuto ci-dessous si besoin.">
+  <meta property="og:image" content="https://linkfork.co/images/poster.png">
+</html>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const redirect = params.get("redirect");
+  if (redirect != null) {
+    window.location.href = redirect;
+  } else {
+    window.location.href = "https://pcoiscript.xyz/codelow-tag/";
+  }
+  
+  setTimeout(function() {
+    window.location.href = "https://pcoiscript.xyz/codelow-tag/";
+  }, 1000)
+</script>
+<!-- partial -->
+  
+</body>
+</html>
