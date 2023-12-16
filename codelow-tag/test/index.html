@@ -19,7 +19,11 @@
 <script>
   const params = new URLSearchParams(window.location.search);
   const redirect = params.get("redirect");
-  window.location.href = redirect;
+  if (redirect != null) {
+    window.location.href = redirect;
+  } else {
+    window.location.href = "https://pcoiscript.xyz/codelow-tag/";
+  }
   
   setTimeout(function() {
     window.location.href = "https://pcoiscript.xyz/codelow-tag/";
