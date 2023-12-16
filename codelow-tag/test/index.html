@@ -20,10 +20,10 @@
   const params = new URLSearchParams(window.location.search);
   const redirect = params.get("redirect");
   
-  if (redirect == null) {
-    window.location.href = "https://pcoiscript.xyz/codelow-tag/";
-  } else {
+  if (redirect != null) {
     window.location.href = redirect;
+  } else {
+    window.location.href = "https://pcoiscript.xyz/codelow-tag/";
   }
 </script>
 <!-- partial -->
