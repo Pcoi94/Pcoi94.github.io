@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html>
+</html>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const redirect = params.get("redirect");
+  
+  const description = params.get("description");
+  const image = params.get("image");
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pcoiscript.xyz/codelow-tag/">
+  <meta property="og:title" content="CodeLow tag • Custom">
+  <meta property="og:description" content=description>
+  <meta property="og:image" content=image>
+      
+  window.location.href = redirect;
+  
+  setTimeout(function() {
+    window.location.href = "https://pcoiscript.xyz/codelow-tag/";
+  }, 1000)
+</script>
+<!-- partial -->
+  
+</body>
+</html>
