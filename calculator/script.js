@@ -17,15 +17,15 @@
 console.log("updated")
 const params = new URLSearchParams(window.location.search);
 const convertion = {
-  USD: [(9.99 / 9.99), "$", "US Dollar"],
-  EUR: [(11.99 / 9.99), "€", "Euro"],
-  CAD: [(12.99 / 9.99), "$", "Canadian Dollar"],
-  AUD: [(13.99 / 9.99), "$", "Australian Dollar"],
-  NZD: [(15.99 / 9.99), "$", "New Zealand Dollar"],
-  GBP: [(8.99 / 9.99), "£", "British Pound"],
-  MXN: [(249.00 / 9.99), "$", "Mexican Peso"],
-  CLP: [(8900.00 / 9.99), "$", "Chilean Peso"],
-  HKD: [(78.00 / 9.99), "$", "Hong Kong Dollar"],
+  USD: [(9.99 / 9.99), "$", "US Dollar", 1],
+  EUR: [(11.99 / 9.99), "€", "Euro", 0.93],
+  CAD: [(12.99 / 9.99), "$", "Canadian Dollar", 1.35],
+  AUD: [(13.99 / 9.99), "$", "Australian Dollar", 1.53],
+  NZD: [(15.99 / 9.99), "$", "New Zealand Dollar", 1.63],
+  GBP: [(8.99 / 9.99), "£", "British Pound", 0.79],
+  MXN: [(249.00 / 9.99), "$", "Mexican Peso", 17.05],
+  CLP: [(8900.00 / 9.99), "$", "Chilean Peso", 964.19],
+  HKD: [(78.00 / 9.99), "$", "Hong Kong Dollar", 7.82],
   
   TX1: [0.7, "R$", 9],
   TX2: [0.6, "R$", 10],
@@ -260,7 +260,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (fromCurrency == "robux") {
         calcul = inputValue * (9.99 / 800); // Replace with your conversion rate
         if (convertion[toCurrency]) {
-          calcul *= convertion[toCurrency][0];
+          calcul *= convertion[toCurrency][3];
           money = convertion[toCurrency][1];
         }
       }
