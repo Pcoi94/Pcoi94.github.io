@@ -260,7 +260,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (fromCurrency == "robux") {
         calcul = inputValue * (9.99 / 800); // Replace with your conversion rate
         if (convertion[toCurrency]) {
-          calcul *= convertion[toCurrency][3];
+          calcul *= convertion[toCurrency][0];
           money = convertion[toCurrency][1];
         }
       }
@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (fromCurrency == "devexed_robux") {
         calcul = inputValue * (105 / 30000); // Replace with your conversion rate
         if (convertion[toCurrency]) {
-          calcul *= convertion[toCurrency][0];
+          calcul *= convertion[toCurrency][3];
           money = convertion[toCurrency][1];
         }
       }
